@@ -32,7 +32,7 @@ This project was created as a portfolio sample to demonstrate front-end developm
 
 ## Live Demo
 
-Coming soon.
+[View Live Demo](https://milesia-atoll-resort.vercel.app/)
 
 ## License
 
