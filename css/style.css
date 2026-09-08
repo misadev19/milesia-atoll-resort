@@ -55,8 +55,7 @@ section {
   gap: 24px;
 }
 
-.hero-location,
-.hero-scroll {
+.hero-location {
   font-size: 12px;
   letter-spacing: 0.2em;
 }
@@ -76,28 +75,77 @@ section {
   letter-spacing: 0.35em;
 }
 
-.hero-arrow {
-  width: 18px;
-  height: 18px;
+/* HERO SCROLL */
+.scroll-down {
+  position: absolute;
+  z-index: 2;
 
-  margin-top: -18px;
+  bottom: 3%;
+  left: 50%;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%);
 
-  transform: rotate(45deg);
-
-  animation: arrowFloat 2s ease-in-out infinite;
+  animation: arrowMove 1.8s ease-in-out infinite;
 }
 
-@keyframes arrowFloat {
+.scroll-down a {
+  position: absolute;
+
+  left: -24px;
+  bottom: 17px;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.2em;
+
+  writing-mode: vertical-rl;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.scroll-down::before {
+  content: "";
+
+  position: absolute;
+
+  bottom: 5px;
+  right: -6px;
+
+  width: 1px;
+  height: 20px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  transform: skewX(-31deg);
+}
+
+.scroll-down::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 5px;
+  right: 0;
+
+  width: 1px;
+  height: 85px;
+
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes arrowMove {
   0%,
   100% {
-    transform: rotate(45deg) translate(0, 0);
+    bottom: 3%;
   }
 
   50% {
-    transform: rotate(45deg) translate(4px, 4px);
+    bottom: 6%;
   }
 }
 
@@ -689,19 +737,6 @@ section {
     color 0.3s ease;
 }
 
-.star-cta-arrow {
-  width: 14px;
-  height: 14px;
-
-  border-right: 1px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-
-  transform: rotate(45deg);
-
-  animation: arrowFloat 2s ease-in-out infinite;
-  margin-bottom: 32px;
-}
-
 /* SOCIAL LINKS */
 
 .social-links {
@@ -806,8 +841,7 @@ section {
     gap: 20px;
   }
 
-  .hero-location,
-  .hero-scroll {
+  .hero-location {
     font-size: 10px;
     letter-spacing: 0.16em;
   }
@@ -821,8 +855,21 @@ section {
     font-size: 0.16em;
   }
 
-  .hero-arrow {
-    margin-top: 10px;
+  .scroll-down {
+    bottom: 4%;
+  }
+
+  .scroll-down a {
+    left: -22px;
+    font-size: 10px;
+  }
+
+  .scroll-down::before {
+    height: 16px;
+  }
+
+  .scroll-down::after {
+    height: 65px;
   }
 
   /* HERO TRANSITION */
@@ -1018,10 +1065,6 @@ section {
 
     font-size: 12px;
     letter-spacing: 0.18em;
-  }
-
-  .star-cta-arrow {
-    margin-bottom: 24px;
   }
 
   .social-links {
